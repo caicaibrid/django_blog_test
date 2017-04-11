@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block head %} {{ title }} {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for ele in result%}
+            <div class="col-md-4">
+                <div class="product_list">
+                    <a href="/articleDetail/{{ ele.id }}">
+                        <div class="product_list_img">
+                            {% if ele.image_url %}
+                                <img src="{{ ele.image_url }}"/>
+                            {% else %}
+                                <img src="/static/image/load.jpg">
+                            {% endif %}
+                        </div>
+                        <div class="product_list_title">
+                            {{ ele.title }}
+                        </div>
+                        <div class="product_list_content">
+                            {{ ele.content }}
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block head %} {{ title }} {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                {% for ele in result %}
+                    <h5 class="text-center">{{ ele.title }}</h5>
+                    <p class="text-center">{{ ele.create_time }}</p>
+                    {% if ele.image_url %}
+                        <img class="cover" src="{{ ele.image_url }}"/>
+                    {% else %}
+                        <img class="cover" src="/static/image/load.jpg">
+                    {% endif %}
+                    <div class="article_detail text-info bg-success">
+                        {{ ele.content }}
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
