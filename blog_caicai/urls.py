@@ -1,30 +1,32 @@
-"""blog_caicai URL Configuration
+# coding:utf-8
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.10/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.conf.urls import url, include
-    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
-"""
 from django.conf.urls import url
 from django.contrib import admin
 
-from index.views import index,addActicle,apiAddActicle,articleDetail
-from userModel.views import login,register
+from index.views import index,home
+from userModel.views import login,register,logout,userList,delUser,updateUser,verifyUser
+from public.code import drawCode
+from articleModel.article import addArticleClass,ArticleClassList,delArticleClass,articleList,delArticle,addActicle,apiAddActicle,articleDetail
 
 urlpatterns = [
     url(r'^$', index),
-    url(r'^addArticle/$',addActicle),
-    url(r'^admin/', admin.site.urls),
-    url(r'^api/addArticle', apiAddActicle),
+    url(r'^(\d+)/$', index), #分类
+    url(r'^addArticle/(\d*)',addActicle),
+    # url(r'^admin/', admin.site.urls), #django默认后台登录入口
+    url(r'^api/addArticle/(\d*)', apiAddActicle),
     url(r'^articleDetail/(\d+)$',articleDetail),
     url(r'^login/$',login),
     url(r'^register/$',register),
+    url(r'^api/code/',drawCode),
+    url(r'^logout/$',logout),
+    url(r'^addArticleClass/(\d*)$',addArticleClass),
+    url(r'^index/$',home),
+    url(r'^userList/$',userList),
+    url(r'^delUser/(\d+)/$',delUser),
+    url(r'^updateUser/(\d+)/$',updateUser),
+    url(r'verifyUser/(\d*)$',verifyUser),
+    url(r'ArticleClassList/$',ArticleClassList),
+    url(r'delArticleClass/(\d+)/$',delArticleClass),
+    url(r'delArticle/(\d+)/$',delArticle),
+    url(r'^articleList/$',articleList),
 ]

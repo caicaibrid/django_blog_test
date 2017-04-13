@@ -9,7 +9,7 @@ def fileWrite(imgStrem):
         with open(url,"wb+") as f :
             for line in imgStrem.chunks():
                 f.write(line)
-    else:
-        url = ""
 
-    return "/static/upload/"+imgStrem.name
+        return "/static/upload/" + imgStrem.name
+    else:
+        return ""

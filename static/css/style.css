@@ -23,7 +23,6 @@ body{
     text-align: center;
     z-index: 10;
     height: 50px;
-    overflow: hidden;
 }
 #content{
     margin-top: 60px;
@@ -87,8 +86,11 @@ body{
 .navbar-inverse{
     background: rgba(0,0,0,0.9);
 }
-.mL100{
-    margin-left: 100px;
+
+@media screen and (min-width:640px){
+    .mL100{
+        margin-left: 100px;
+    }
 }
 
 #footer{
@@ -165,4 +167,34 @@ body{
 }
 .text-danger{
     line-height: 34px;
+}
+.rad4{
+    border-radius: 4px;
+}
+.user_info img{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.table.userlist td,.table.userlist th{
+    text-align: center;
+    vertical-align: middle;
+}
+.table.userlist td img{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid #eee;
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear;
+    overflow: hidden;
+}
+
+.table.userlist td img:hover{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
 }

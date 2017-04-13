@@ -8,43 +8,74 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
-                <form id="login" action="/register/" class="animated slideInDown" method="post" enctype="multipart/form-data">
+                <form id="login"
+                        {% if id %}
+                      action="/updateUser/{{ id }}/"
+                        {% else %}
+                      action="/register/"
+                        {% endif %}
+
+                      class="animated slideInDown" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <div class="form-group">
-                        <label for="username">用户名</label>
-                        <input type="text" name="username" class="form-control" id="username" placeholder="用户名">
 
-                    </div>
-                    <div class="form-group">
-                        <label for="email">邮箱</label>
-                        <input type="text" name="email" class="form-control" id="email" placeholder="邮箱">
+                        <div class="form-group">
+                            <label for="username">用户名</label>
+                            <input type="text" name="username" class="form-control" id="username" placeholder="用户名" value="{{ userInfo.0.username }}">
 
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">密码</label>
-                        <input class="form-control" type="password" name="password" id="exampleInputPassword1"
-                               placeholder="密码"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input {% if id %}
+                                readonly
+                            {% endif %} type="text" name="email" class="form-control" id="email" placeholder="邮箱" value="{{ userInfo.0.email }}">
 
-                    </div>
-                    <div class="form-group">
-                        <label for="file">头像</label>
-                        <div class="row">
-                            <div class="col-xs-8">
-                                <input type="file" class="form-control" name="file" id="file"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">密码</label>
+                            <input class="form-control" type="password" name="password" id="exampleInputPassword1"
+                                   placeholder="密码" value="{{ userInfo.0.password }}"/>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">确认密码</label>
+                            <input class="form-control" type="password" name="confirmPassword" id="confirmPassword"
+                                   placeholder="密码" value="{{ userInfo.0.password }}"/>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="role">角色(管理员需要超级管理员审核)</label>
+                            <select class="form-control" name="role" id="role">
+                                <option value="">请选择</option>
+                                <option value="1" {% ifequal userInfo.0.role 1 %}
+                                selected
+                                {% endifequal %}>管理员</option>
+                                <option value="2" {% ifequal userInfo.0.role 2 %}
+                                selected
+                                {% endifequal %}>用户</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="file">头像</label>
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <input type="file" class="form-control" name="file" id="file" value="{{ userInfo.0.img_url }}"/>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">验证码</label>
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <input type="text" class="form-control" name="code"/>
-                            </div>
-                            <div class="col-xs-6">
-                                <img src="">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">验证码</label>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" name="code"/>
+                                </div>
+                                <div class="col-xs-6 ">
+                                    <img class="rad4" src="/api/code/"
+                                         onclick="this.setAttribute('src','/api/code/?r='+Math.random())">
+                                </div>
                             </div>
                         </div>
-                    </div>
+
                     <hr/>
                     <div class="row">
                         <div class="col-xs-4">

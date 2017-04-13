@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block head %} {{ title }} {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>待审核用户</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered userlist">
+                        <tr>
+                            <th>Id</th>
+                            <th>用户名</th>
+                            <th>邮箱</th>
+                            <th>头像</th>
+                            <th>权限</th>
+                            <th>操作</th>
+                        </tr>
+                        {% for ele in verifyUserList %}
+                            <tr>
+                                <td>{{ ele.id }}</td>
+                                <td>{{ ele.username }}</td>
+                                <td>{{ ele.email }}</td>
+                                <td><img src="{{ ele.img_url }}"/></td>
+                                <td>{{ ele.role }}</td>
+                                <td>
+                                    <a href="/verifyUser/{{ ele.id }}" class="btn btn-danger">审核</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

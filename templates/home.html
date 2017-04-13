@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block head %} {{ title }} {% endblock %}
+
+{% block content %}
+        <div class="container">
+           <div class="boxCenter">
+               <h2>您有以下权限</h2>
+               <p><a href="/">博客首页</a></p>
+               <p><a href="/admin">博客后台</a></p>
+           </div>
+        </div>
+{% endblock %}

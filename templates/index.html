@@ -6,28 +6,48 @@
 
 {% block content %}
     <div class="container">
-        <div class="row">
-            {% for ele in result%}
-            <div class="col-md-4">
-                <div class="product_list">
-                    <a href="/articleDetail/{{ ele.id }}">
-                        <div class="product_list_img">
-                            {% if ele.image_url %}
-                                <img src="{{ ele.image_url }}"/>
-                            {% else %}
-                                <img src="/static/image/load.jpg">
-                            {% endif %}
+        {% if classList %}
+            <h3>文章分类</h3>
+            <div class="row">
+                {% for ele in classList %}
+                    <div class="col-md-6">
+
+                        <div {% ifequal forloop.counter|divisibleby:2 1 %} class="alert alert-danger"  {% endifequal %} class="alert alert-success">
+                            <a href="/{{ ele.id }}/">{{ ele.className }} ({{ ele.count }})</a>
                         </div>
-                        <div class="product_list_title">
-                            {{ ele.title }}
-                        </div>
-                        <div class="product_list_content">
-                            {{ ele.content }}
-                        </div>
-                    </a>
-                </div>
+                    </div>
+                {% endfor %}
+                {% if not classList %}
+                    <h5 class="text-danger">暂没有分类!</h5>
+                {% endif %}
             </div>
+            <h3>文章列表</h3>
+        {% endif %}
+        <div class="row">
+            {% for ele in result %}
+                <div class="col-md-4">
+                    <div class="product_list">
+                        <a href="/articleDetail/{{ ele.id }}">
+                            <div class="product_list_img">
+                                {% if ele.image_url %}
+                                    <img src="{{ ele.image_url }}"/>
+                                {% else %}
+                                    <img src="/static/image/load.jpg">
+                                {% endif %}
+                            </div>
+                            <div class="product_list_title">
+                                {{ ele.title }}
+                            </div>
+                            <div class="product_list_content">
+                                {{ ele.content }}
+                            </div>
+                        </a>
+                    </div>
+                </div>
             {% endfor %}
+            {% if not result %}
+                <h5 class="text-danger">暂没有文章!</h5>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

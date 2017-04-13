@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block head %} {{ title }} {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>文章分类列表</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered userlist">
+                        <tr>
+                            <th>Id</th>
+                            <th>分类名称</th>
+                            <th>操作</th>
+                        </tr>
+                        {% for ele in ArticleClassList %}
+                            <tr>
+                                <td>{{ ele.id }}</td>
+                                <td>{{ ele.className }}</td>
+                                <td>
+                                    <a href="/delArticleClass/{{ ele.id }}/" class="btn btn-danger">删除</a>
+                                    <a href="/addArticleClass/{{ ele.id }}" class="btn btn-warning">修改</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
