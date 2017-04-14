@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-xs-12">
+        <nav aria-label="...">
+            <ul class="pager">
+                <li class="previous {% if page.pageNum == 1 %}disabled{% endif %}">
+                    <a href="{% if page.pageNum != 1 %}{{ request.path }}?page={{ page.pageNum | add:-1 }}&limit={{ page.limit }}{% else %}javascript:void(0){% endif %}"><span
+                            aria-hidden="true">←</span> Older</a>
+                </li>
+                <li class="next {% if page.pageNum == page.TotalPage %}disabled{% endif %}"><a
+                        href="{% if page.pageNum != page.TotalPage %}{{ request.path }}?page={{ page.pageNum | add:1 }}&limit={{ page.limit }}{% else %}javascript:void(0){% endif %}">Newer <span
+                        aria-hidden="true">→</span></a></li>
+                <p class="page_info">总页数{{ page.TotalPage }},当前页数{{ page.pageNum }}</p>
+            </ul>
+        </nav>
+    </div>
+</div>

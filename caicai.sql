@@ -30,7 +30,7 @@ CREATE TABLE `article` (
   `image_url` varchar(200) DEFAULT NULL,
   `class_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `article` (
 
 LOCK TABLES `article` WRITE;
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
-INSERT INTO `article` VALUES (2,'css 换行121223333333333','work-sapce:break-word','2017-04-13 18:48:00','/static/upload/13.jpg',4),(5,'css 换行12122','work-sapce:break-word','2017-04-13 18:47:04','/static/upload/javascript2.jpg',4),(6,'css 换行12122','work-sapce:break-word','2017-04-13 18:47:04','/static/upload/javascript2.jpg',4),(7,'css 换行12122','work-sapce:break-word','2017-04-13 18:47:04','/static/upload/javascript2.jpg',4),(8,'css 换行12122','work-sapce:break-word','2017-04-13 18:47:04','/static/upload/javascript2.jpg',4),(9,'css 换行12122','work-sapce:break-word','2017-04-13 18:47:04','/static/upload/javascript2.jpg',4),(10,'css 换行12122','work-sapce:break-word','2017-04-13 18:47:04','/static/upload/javascript2.jpg',4),(11,'222','222','2017-04-13 18:50:54','/static/upload/11.jpg',2);
+INSERT INTO `article` VALUES (2,'css 换行121223333333333','work-sapce:break-word','2017-04-13 18:48:00','/static/upload/13.jpg',4),(5,'css 换行12122','work-sapce:break-word','2017-04-13 18:47:04','/static/upload/javascript2.jpg',4),(6,'css 换行12122','work-sapce:break-word','2017-04-13 18:47:04','/static/upload/javascript2.jpg',4),(7,'css 换行12122','work-sapce:break-word','2017-04-13 18:47:04','/static/upload/javascript2.jpg',4),(8,'css 换行12122','work-sapce:break-word','2017-04-13 18:47:04','/static/upload/javascript2.jpg',4),(9,'css 换行12122','work-sapce:break-word','2017-04-13 18:47:04','/static/upload/javascript2.jpg',4),(10,'css 换行12122','work-sapce:break-word','2017-04-13 18:47:04','/static/upload/javascript2.jpg',4),(11,'222','222','2017-04-13 18:50:54','/static/upload/11.jpg',2),(12,'django','django','2017-04-14 14:02:17','/static/upload/24.jpg',5),(13,'文章标题','文章内容','2017-04-14 14:02:49','/static/upload/4.jpg',3),(14,'对象的扩展','<pre class=\"prettyprint lang-js\">\r\n<ol class=\"content-toc\" id=\"content-toc\" style=\"background:#BDC3C7;color:#333333;font-family:Verdana, Arial;font-size:15.36px;\">\r\n	\r\n	<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n		<a href=\"http://es6.ruanyifeng.com/#docs/object#属性的简洁表示法\">属性的简洁表示法</a> \r\n	</li>\r\n\r\n	<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n		<a href=\"http://es6.ruanyifeng.com/#docs/object#属性名表达式\">属性名表达式</a> \r\n	</li>\r\n\r\n	<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n		<a href=\"http://es6.ruanyifeng.com/#docs/object#方法的 name 属性\">方法的 name 属性</a> \r\n	</li>\r\n\r\n	<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n		<a href=\"http://es6.ruanyifeng.com/#docs/object#Object.is()\">Object.is()</a> \r\n	</li>\r\n\r\n	<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n		<a href=\"http://es6.ruanyifeng.com/#docs/object#Object.assign()\">Object.assign()</a> \r\n	</li>\r\n\r\n	<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n		<a href=\"http://es6.ruanyifeng.com/#docs/object#属性的可枚举性\">属性的可枚举性</a> \r\n	</li>\r\n\r\n	<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n		<a href=\"http://es6.ruanyifeng.com/#docs/object#属性的遍历\">属性的遍历</a> \r\n	</li>\r\n\r\n	<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n		<a href=\"http://es6.ruanyifeng.com/#docs/object#__proto__属性，Object.setPrototypeOf()，Object.getPrototypeOf()\">__proto__属性，Object.setPrototypeOf()，Object.getPrototypeOf()</a> \r\n	</li>\r\n\r\n	<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n		<a href=\"http://es6.ruanyifeng.com/#docs/object#Object.keys()，Object.values()，Object.entries()\">Object.keys()，Object.values()，Object.entries()</a> \r\n	</li>\r\n\r\n	<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n		<a href=\"http://es6.ruanyifeng.com/#docs/object#对象的扩展运算符\">对象的扩展运算符</a> \r\n	</li>\r\n\r\n	<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n		<a href=\"http://es6.ruanyifeng.com/#docs/object#Object.getOwnPropertyDescriptors()\">Object.getOwnPropertyDescriptors()</a> \r\n	</li>\r\n\r\n	<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n		<a href=\"http://es6.ruanyifeng.com/#docs/object#Null 传导运算符\">Null 传导运算符</a> \r\n	</li>\r\n\r\n</ol>\r\n\r\n<h3>\r\n	\r\n</h3>\r\n</pre>','2017-04-14 14:46:43','/static/upload/javascript18.jpg',2),(15,'数组的扩展','<p>\r\n	<img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/0.gif\" border=\"0\" alt=\"\" /><span></span><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/0.gif\" border=\"0\" alt=\"\" /><span></span><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/0.gif\" border=\"0\" alt=\"\" />\r\n</p>\r\n<p>\r\n	<ol class=\"content-toc\" id=\"content-toc\" style=\"background:#BDC3C7;color:#333333;font-family:Verdana, Arial;font-size:15.36px;\">\r\n		<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n			<a href=\"http://es6.ruanyifeng.com/#docs/array#Array.from()\">Array.from()</a>\r\n		</li>\r\n		<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n			<a href=\"http://es6.ruanyifeng.com/#docs/array#Array.of()\">Array.of()</a>\r\n		</li>\r\n		<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n			<a href=\"http://es6.ruanyifeng.com/#docs/array#数组实例的copyWithin()\">数组实例的copyWithin()</a>\r\n		</li>\r\n		<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n			<a href=\"http://es6.ruanyifeng.com/#docs/array#数组实例的find()和findIndex()\">数组实例的find()和findIndex()</a>\r\n		</li>\r\n		<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n			<a href=\"http://es6.ruanyifeng.com/#docs/array#数组实例的fill()\">数组实例的fill()</a>\r\n		</li>\r\n		<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n			<a href=\"http://es6.ruanyifeng.com/#docs/array#数组实例的entries()，keys()和values()\">数组实例的entries()，keys()和values()</a>\r\n		</li>\r\n		<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n			<a href=\"http://es6.ruanyifeng.com/#docs/array#数组实例的includes()\">数组实例的includes()</a>\r\n		</li>\r\n		<li class=\"link\" style=\"text-indent:-5px;font-size:0.7rem;color:#2980B9;font-weight:bold;\">\r\n			<a href=\"http://es6.ruanyifeng.com/#docs/array#数组的空位\">数组的空位</a>\r\n		</li>\r\n	</ol>\r\n<img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/13.gif\" border=\"0\" alt=\"\" />\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	<span id=\"__kindeditor_bookmark_start_24__\"></span>\r\n</p>\r\n<span></span>','2017-04-14 14:55:21','/static/upload/javascript14.png',2),(16,'我的位置','<p>\r\n	<u><s><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/40.gif\" border=\"0\" alt=\"\" />我的位置在哪里呢?哈哈哈</s></u><u><s><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/31.gif\" border=\"0\" alt=\"\" /></s></u>\r\n</p>\r\n<p>\r\n	<img src=\"http://api.map.baidu.com/staticimage?center=116.460931%2C39.965056&amp;zoom=15&amp;width=558&amp;height=360&amp;markers=116.460931%2C39.965056&amp;markerStyles=l%2CA\" alt=\"\" />\r\n</p>\r\n<p>\r\n	<img src=\"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492163400653&di=6b5450c682e03e55fb179b3f08b8502d&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%253D580%2Fsign%3Dfeeeeeac38f33a879e6d0012f65d1018%2Fe5cd1afae6cd7b89b586571f0d2442a7db330e89.jpg\" width=\"300\" height=\"300\" title=\"SELECT column_name, function(column_name) FROM table_name WHERE column_name operator value GROUP BY column_name;  mysql> select * from user; +----+---------+------------+ | id | name    | time_count | +----+---------+------------+ |  1 | caicai2 |          1 | |  2 | caicai3 |          2 | |  3 | caicai3 |          3 | |  5 | caicai5 |          5 | |  6 | caicai5 |          5 | +----+---------+------------+  mysql> select name,sum(time_count) from user group by name;　name字段对应的名字出现的总次数的和 +---------+-----------------+ | name    | sum(time_count) | +---------+-----------------+ | caicai2 |               1 | | caicai3 |               5 | | caicai5 |              10 | +---------+-----------------+  mysql> select name,count(time_count) from user group by name;　name字段对应的名字出现的次数　 +---------+-------------------+ | name    | count(time_count) | +---------+-------------------+ | caicai2 |                 1 | | caicai3 |                 2 | | caicai5 |                 2 | +---------+-------------------+\" align=\"right\" alt=\"SELECT column_name, function(column_name) FROM table_name WHERE column_name operator value GROUP BY column_name;  mysql> select * from user; +----+---------+------------+ | id | name    | time_count | +----+---------+------------+ |  1 | caicai2 |          1 | |  2 | caicai3 |          2 | |  3 | caicai3 |          3 | |  5 | caicai5 |          5 | |  6 | caicai5 |          5 | +----+---------+------------+  mysql> select name,sum(time_count) from user group by name;　name字段对应的名字出现的总次数的和 +---------+-----------------+ | name    | sum(time_count) | +---------+-----------------+ | caicai2 |               1 | | caicai3 |               5 | | caicai5 |              10 | +---------+-----------------+  mysql> select name,count(time_count) from user group by name;　name字段对应的名字出现的次数　 +---------+-------------------+ | name    | count(time_count) | +---------+-------------------+ | caicai2 |                 1 | | caicai3 |                 2 | | caicai5 |                 2 | +---------+-------------------+\" />\r\n</p>','2017-04-14 15:03:28','/static/upload/12.jpg',8),(17,'html','<pre class=\"prettyprint lang-js\"><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/13.gif\" border=\"0\" alt=\"\" /><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/13.gif\" border=\"0\" alt=\"\" /><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/13.gif\" border=\"0\" alt=\"\" /></pre>\r\n<pre class=\"prettyprint lang-js\">.单行{\r\n     white-space:nowrap;\r\n     text-overflow:ellipsis;\r\n     overflow:hidden\r\n}\r\n.多行{\r\n    display:-webkit-box;\r\n    -webkit-box-orient:vertical;\r\n    -webkit-line-clamp: 2;\r\n    white-space:nowrap;\r\n    text-overflow:ellipsis;\r\n    overflow:hidden\r\n}\r\n</pre>','2017-04-14 15:19:39','/static/upload/javascript30.jpg',1);
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -237,6 +237,33 @@ LOCK TABLES `auth_user_user_permissions` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `comment`
+--
+
+DROP TABLE IF EXISTS `comment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `comment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `content` text CHARACTER SET utf8 NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `article_id` int(11) NOT NULL,
+  `create_time` varchar(1024) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comment`
+--
+
+LOCK TABLES `comment` WRITE;
+/*!40000 ALTER TABLE `comment` DISABLE KEYS */;
+INSERT INTO `comment` VALUES (1,'我是评论',14,12,'2017-04-14 19:07:21'),(2,'<img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/29.gif\" border=\"0\" alt=\"\" /><span></span><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/29.gif\" border=\"0\" alt=\"\" /><span></span><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/29.gif\" border=\"0\" alt=\"\" /><span></span><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/29.gif\" border=\"0\" alt=\"\" /><span></span><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/29.gif\" border=\"0\" alt=\"\" /><span></span><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/29.gif\" border=\"0\" alt=\"\" /><span></span><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/29.gif\" border=\"0\" alt=\"\" /><span></span><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/29.gif\" border=\"0\" alt=\"\" /><span></span><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/29.gif\" border=\"0\" alt=\"\" /><span></span><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/29.gif\" border=\"0\" alt=\"\" /><span></span><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/29.gif\" border=\"0\" alt=\"\" /><span></span><img src=\"http://localhost:8000/static/lib/kinded/plugins/emoticons/images/29.gif\" border=\"0\" alt=\"\" /><span></span>',14,12,'2017-04-14 19:08:39');
+/*!40000 ALTER TABLE `comment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `django_admin_log`
 --
 
@@ -343,7 +370,7 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('gfhb0v1ixg4irzji1euck0ymge138sa6','OTgxOGFhZGQyNTU5M2I2NDhkZTRhNTc2MjI3ZWZiZDhmZDhmMzRjZTp7ImNvZGUiOiJwanh3IiwidXNlciI6eyJ1c2VybmFtZSI6ImxpdXhpbiIsImltZ191cmwiOiIvc3RhdGljL3VwbG9hZC9qYXZhc2NyaXB0NS5wbmciLCJyb2xlIjozLCJlbWFpbCI6ImFkbWluQG5ld2Jvcm4tdG93bi5jb20iLCJpZCI6MX19','2017-04-27 11:02:50');
+INSERT INTO `django_session` VALUES ('gfhb0v1ixg4irzji1euck0ymge138sa6','MmM2MTIyMTQ1MGI0MTdjZjU3MDFhMWU4MmRjNDNmNzEzOTQ1ODcwNzp7ImNvZGUiOiJ0Y3Z2In0=','2017-04-28 11:08:53');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -355,14 +382,14 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `username` varchar(1024) NOT NULL,
+  `password` varchar(1024) NOT NULL,
+  `email` varchar(1024) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `img_url` varchar(255) DEFAULT NULL,
+  `img_url` varchar(1024) DEFAULT NULL,
   `role` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -371,7 +398,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('liuxin','4b91719a6e0b1ec03508d3d41490b5f2','admin@newborn-town.com',1,'/static/upload/javascript5.png',3),('caicai','c58d54a04e0b2b2e285a3424c5245c03','caicai@qq.com',5,'/static/upload/javascript3.jpg',1),('caicai3','cddbdd18987eb3cb4d027f25fdb28b94','caicai3@qq.com',6,'/static/upload/javascript4.jpg',3),('caicai5','017df468ad446693c4085412681f6c69','caicai5@qq.com',7,'/static/upload/javascript16.jpg',3),('caicai88','873f73fa1748da0163b0e48b982207a4','caicai88@qq.com',8,'/static/upload/13.jpg',2),('111','698d51a19d8a121ce581499d7b701668','111@qq.com',9,'/static/upload/16.jpg',3),('222','bcbe3365e6ac95ea2c0343a2395834dd','222@qq.com',10,'/static/upload/14.jpg',3),('333','310dcbbf4cce62f762a2aaa148d556bd','333@qq.com',13,'/static/upload/17.jpg',3);
+INSERT INTO `user` VALUES ('liuxin','4b91719a6e0b1ec03508d3d41490b5f2','admin@newborn-town.com',1,'/static/upload/javascript5.png',3),('caicai','c58d54a04e0b2b2e285a3424c5245c03','caicai@qq.com',5,'/static/upload/javascript3.jpg',2),('caicai3','cddbdd18987eb3cb4d027f25fdb28b94','caicai3@qq.com',6,'/static/upload/javascript4.jpg',3),('caicai5','017df468ad446693c4085412681f6c69','caicai5@qq.com',7,'/static/upload/javascript16.jpg',3),('caicai88','873f73fa1748da0163b0e48b982207a4','caicai88@qq.com',8,'/static/upload/13.jpg',2),('111','698d51a19d8a121ce581499d7b701668','111@qq.com',9,'/static/upload/16.jpg',3),('222','bcbe3365e6ac95ea2c0343a2395834dd','222@qq.com',10,'/static/upload/14.jpg',3),('333','310dcbbf4cce62f762a2aaa148d556bd','333@qq.com',13,'/static/upload/17.jpg',3),('caicai888','bcd015d4d1a9fd82fb2723b03f38c0da','caicai888@qq.com',14,'/static/upload/8.jpg',2),('caicai666','b68cadb71f3bf0c0605884dac9a513f9','caicai666@qq.com',15,'/static/image/load.jpg',2);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -384,4 +411,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-13 19:05:38
+-- Dump completed on 2017-04-14 19:09:19

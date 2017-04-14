@@ -92,7 +92,7 @@ def register(request,conn=None):
         pwd = request.POST.get("password","")
         confirmPwd = request.POST.get("confirmPassword","")
         email = request.POST.get("email","")
-        img_url = request.FILES.get("file","")
+        img_url = request.FILES.get("file","/static/image/load.jpg")
         code = request.POST.get("code","")
         role = request.POST.get("role","")
 
@@ -163,6 +163,7 @@ def updateUser(request,conn=None,id=""):
         sql = "select * from user where id=%d"%int(id)
         result = db_query(conn,sql)
         result = result["result"]
+        request.session["user"]["img_url"] = result[0]["img_url"]
         return render(request,"register.html",{
                     "title":"修改信息",
                     "id":int(id),
@@ -172,9 +173,9 @@ def updateUser(request,conn=None,id=""):
     else:
         username = request.POST.get("username", "")
         pwd = request.POST.get("password", "")
-        confirmPwd = request.POST.get("confirmPassword", "")
+        confirmPwd = request.POST.get("confirmPassword")
         email = request.POST.get("email", "")
-        img_url = request.FILES.get("file", "")
+        img_url = request.FILES.get("file",request.session["user"]["img_url"])
         code = request.POST.get("code", "")
         role = request.POST.get("role", "")
 
@@ -201,6 +202,7 @@ def updateUser(request,conn=None,id=""):
                 sql = "update user set username='%s', password='%s', email='%s', img_url='%s', role=%d where id=%d" % (username, pwd, email, img_url, int(role),id)
 
                 result = db_update(conn, sql)
+                request.session["user"]["img_url"] = img_url
                 return redirect("/userList")
             else:
                 error = "用户不存在!"

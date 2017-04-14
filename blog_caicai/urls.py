@@ -7,6 +7,7 @@ from index.views import index,home
 from userModel.views import login,register,logout,userList,delUser,updateUser,verifyUser
 from public.code import drawCode
 from articleModel.article import addArticleClass,ArticleClassList,delArticleClass,articleList,delArticle,addActicle,apiAddActicle,articleDetail
+from comment.views import addComment,commentList
 
 urlpatterns = [
     url(r'^$', index),
@@ -29,4 +30,6 @@ urlpatterns = [
     url(r'delArticleClass/(\d+)/$',delArticleClass),
     url(r'delArticle/(\d+)/$',delArticle),
     url(r'^articleList/$',articleList),
+    url(r'^addComment/$',addComment),
+    url(r'^commentList/$',commentList)
 ]

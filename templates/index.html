@@ -11,8 +11,8 @@
             <div class="row">
                 {% for ele in classList %}
                     <div class="col-md-6">
-
-                        <div {% ifequal forloop.counter|divisibleby:2 1 %} class="alert alert-danger"  {% endifequal %} class="alert alert-success">
+                        <div {% ifequal forloop.counter|divisibleby:2 1 %} class="alert alert-danger"  {% endifequal %}
+                                                                           class="alert alert-success">
                             <a href="/{{ ele.id }}/">{{ ele.className }} ({{ ele.count }})</a>
                         </div>
                     </div>
@@ -39,7 +39,9 @@
                                 {{ ele.title }}
                             </div>
                             <div class="product_list_content">
-                                {{ ele.content }}
+                                {% autoescape off %}
+                                    {{ ele.content |truncatewords_html:"2" }}
+                                {% endautoescape %}
                             </div>
                         </a>
                     </div>
@@ -49,5 +51,6 @@
                 <h5 class="text-danger">暂没有文章!</h5>
             {% endif %}
         </div>
+        {% include "page.html" %}
     </div>
 {% endblock %}

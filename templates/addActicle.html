@@ -7,24 +7,25 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-sm-offset-3">
+            <div class="col-sm-8 col-sm-offset-2">
                 <form id="login"
-                      {% if article %}
+                        {% if article %}
                       action="/api/addArticle/{{ article.0.id }}"
-                      {% else %}
+                        {% else %}
                       action="/api/addArticle/"
-                      {% endif %}
+                        {% endif %}
                       class="animated slideInDown" method="post"
                       enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-group">
                         <label for="exampleInputEmail1">文章标题</label>
-                        <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="文章标题" value="{{ article.0.title }}">
+                        <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="文章标题"
+                               value="{{ article.0.title }}">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">文章内容</label>
-                        <textarea class="form-control" name="content" id="exampleInputPassword1"
-                                  placeholder="文章内容" >{{ article.0.content }}</textarea>
+                        <label for="content">文章内容</label>
+                        <textarea class="form-control" name="content" id="content1"
+                                  placeholder="文章内容">{{ article.0.content }}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="articleClass">文章类别</label>
@@ -32,7 +33,8 @@
                                 placeholder="文章内容">
                             <option value="">请选择</option>
                             {% for ele in articleClassList %}
-                                <option {% ifequal article.0.class_id ele.id %} selected {% endifequal %} value="{{ ele.id }}">{{ ele.className }}</option>
+                                <option {% ifequal article.0.class_id ele.id %} selected {% endifequal %}
+                                                                                value="{{ ele.id }}">{{ ele.className }}</option>
                             {% endfor %}
                         </select>
                     </div>
@@ -40,7 +42,8 @@
                         <label for="exampleInputPassword1">封面图片</label>
                         <div class="row">
                             <div class="col-xs-6">
-                                <input type="file" class="form-control" name="file" id="file" value="{{ article.0.imgage_url }}"/>
+                                <input type="file" class="form-control" name="file" id="file"
+                                       value="{{ article.0.imgage_url }}"/>
                             </div>
                         </div>
                     </div>
@@ -55,4 +58,18 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript" src="/static/lib/kinded/kindeditor-min.js"></script>
+    <script type="text/javascript" src="/static/lib/kinded/zh_CN.js"></script>
+    <link rel="stylesheet" href="/static/lib/kinded/themes/default/default.css"/>
+    <script>
+        KindEditor.ready(function (K) {
+            K.create('#content1', {
+                themeType: 'default'
+            });
+        });
+    </script>
+
 {% endblock %}

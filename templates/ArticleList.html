@@ -24,7 +24,11 @@
                             <tr>
                                 <td>{{ ele.id }}</td>
                                 <td>{{ ele.title }}</td>
-                                <td>{{ ele.content }}  </td>
+                                <td>
+                                    {% autoescape off %}
+                                        {{ ele.content |truncatewords_html:"2" }}
+                                    {% endautoescape %}
+                                </td>
                                 <td>{{ ele.create_time }}</td>
                                 <td><img src="{{ ele.image_url }}"/></td>
                                 <td>{{ ele.class_id }}</td>
@@ -39,5 +43,6 @@
                 </div>
             </div>
         </div>
+        {% include "page.html" %}
     </div>
 {% endblock %}

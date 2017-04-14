@@ -6,7 +6,8 @@ from public.mysql_conn import dbconn,db_query,db_update
 from userModel.views import isLogin
 from datetime import datetime
 from public.loadFile import fileWrite
-
+from comment.views import commentList
+import math
 error = ""
 
 
@@ -95,14 +96,28 @@ def ArticleClassList(request,conn=None):
 
 @dbconn
 def articleList(request,conn=None):
+
     isRole = isLogin(request)
+    pageNum = int(request.GET.get("page", 1))
+    limit = int(request.GET.get("limit", 9))
+
     if isRole:
-        sql = "select * from article"
+        sql = "select * from article limit %d,%d" % (int(pageNum-1)*limit,limit)
         result = db_query(conn, sql)
+        # 查询总共的条数
+        sql = 'select count(*) as TotalNum from article'
+        TotalNum = db_query(conn, sql)
+        TotalNum = TotalNum["result"][0]["TotalNum"]
+        TotalPage = (TotalNum / float(limit))
 
         return render(request, "ArticleList.html", {
             "title": "文章列表",
-            "ArticleList": result["result"]
+            "ArticleList": result["result"],
+            "page": {
+                "TotalPage": int(math.ceil(TotalPage)),
+                "limit": limit,
+                "pageNum": pageNum
+            }
         })
     else:
         return redirect("/")
@@ -161,13 +176,21 @@ def apiAddActicle(request,conn=None,id=""):
     else:
         return redirect("/")
 
+
 @dbconn
 def articleDetail(request,conn=None,_id=None):
+
     if _id:
         _id = int(_id)
 
     sql = "select * from article WHERE id=%d"%_id
     result = db_query(conn, sql)
 
+    #查询评论列表
+    commList = commentList(request,conn,_id)
+
+    print commList
     return render(request, "articleDetail.html", dict({
-        "title": "文章详情"}, **result))
+        "title": "文章详情",
+        "commList":commList["result"]
+    }, **result))

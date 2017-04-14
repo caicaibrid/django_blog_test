@@ -8,20 +8,21 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                {% for ele in result %}
-                    <h5 class="text-center">{{ ele.title }}</h5>
-                    <p class="text-center">{{ ele.create_time }}</p>
-                    {% if ele.image_url %}
-                        <img class="cover" src="{{ ele.image_url }}"/>
-                    {% else %}
-                        <img class="cover" src="/static/image/load.jpg">
-                    {% endif %}
-                    <div class="article_detail text-info bg-success">
-                        {{ ele.content }}
-                    </div>
-                {% endfor %}
-
+                <h3 class="text-center text-danger">{{ result.0.title }}</h3>
+                <p class="text-center">{{ result.0.create_time }}</p>
+                {% if result.0.image_url %}
+                    <img class="cover" src="{{ result.0.image_url }}"/>
+                {% else %}
+                    <img class="cover" src="/static/image/load.jpg">
+                {% endif %}
+                <div class="article_detail text-info bg-success">
+                    {% autoescape off %}
+                        {{ result.0.content }}
+                    {% endautoescape %}
+                </div>
             </div>
         </div>
+        {% include "addComment.html" %}
+        {% include "commentList.html" %}
     </div>
 {% endblock %}
