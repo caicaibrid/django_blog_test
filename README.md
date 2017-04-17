@@ -143,7 +143,7 @@ python manage.py migrate
 
 {{ "<a>1<a>1<a>1</a></a></a>22<a>1</a>"|truncatewords_html:"2" }}： 截取指定个数的html标记，并补完整
 
-<ul>{{ list|unordered_list }}</ul>： 多重嵌套列表展现为html的无序列表
+{{ list|unordered_list }}：//ul 多重嵌套列表展现为html的无序列表
 
 {{ string|upper }} ：全部大写
 
