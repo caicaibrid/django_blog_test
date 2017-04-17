@@ -7,13 +7,14 @@
 hashlib
 
 超级管理员
-liuxin
-liuxin = 4b91719a6e0b1ec03508d3d41490b5f2
+email :admin@newborn-town.com
+password :liuxin
+加密 liuxin = 4b91719a6e0b1ec03508d3d41490b5f2
 
 
 
 ## 1. 实验环境
-ubuntu14.4 + django1.10.6
+ubuntu14.4 + django1.10.6 + python2.7.6
 
 ## 2. 问题描述
 在配置完数据库mysite/settings.py后，通常需要运行
