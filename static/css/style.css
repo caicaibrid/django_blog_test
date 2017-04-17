@@ -227,3 +227,6 @@ textarea{
 .comment_list{
     min-height: 90px;
 }
+.ke-container{
+    width: 100%!important;
+}
